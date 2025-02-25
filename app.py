@@ -3,7 +3,7 @@ from data2 import json_file, all_data  # Import your JSON generation function
 
 app = Flask(__name__ , static_folder='static')
 
-JSON_FOLDER = 'E:/Uni Projects/zelo'
+JSON_FOLDER = 'E:/Uni Projects/zelo' #Change according to where json file is created
 
 
 weather_activities = {
@@ -520,13 +520,6 @@ def weatherpage():
         else:
             link3 = "default.png"
 
-        # if accept1 == False:
-        #     link1 = "default.png"
-        # if accept2 == False:
-        #     link2 = "default.png"
-        # if accept3 == False:
-        #     link3 = "default.png"
-
     except Exception as e:
         return f"Error in the activity pictures part: {e}", 500
     
@@ -537,10 +530,6 @@ def weatherpage():
 def get_weather_data():
     return send_from_directory(JSON_FOLDER, 'weather_data.json')                            #Hussains Laptop
     #return send_from_directory('E:/github/Weather-App-Project', 'weather_data.json')       #Usmans Laptop
-
-# @app.route('/weather_data.json')
-# def send_file(weather_data.json):
-#     return send_from_directory(app.static_folder,weather_data)
 
 if __name__ == '__main__':
     app.run(debug=True)
