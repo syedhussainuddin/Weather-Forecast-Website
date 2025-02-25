@@ -1,0 +1,43 @@
+{
+    "1st_day": {
+        "day": "Tuesday",
+        "date": "02-25",
+        "temperature_now": "27\u00b0C",
+        "minimum_temp": "18\u00b0C",
+        "maximum_temp": "30\u00b0C",
+        "weather_day": "Cloudy",
+        "weather_night": "Partly cloudy"
+    },
+    "2nd_day": {
+        "day": "Wednesday",
+        "date": "02-26",
+        "minimum_temp": "20\u00b0C",
+        "maximum_temp": "30\u00b0C",
+        "weather_day": "Intermittent clouds",
+        "weather_night": "Partly cloudy"
+    },
+    "3rd_day": {
+        "day": "Thursday",
+        "date": "02-27",
+        "minimum_temp": "20\u00b0C",
+        "maximum_temp": "30\u00b0C",
+        "weather_day": "Mostly cloudy",
+        "weather_night": "Partly cloudy"
+    },
+    "4th_day": {
+        "day": "Friday",
+        "date": "02-28",
+        "minimum_temp": "20\u00b0C",
+        "maximum_temp": "30\u00b0C",
+        "weather_day": "Partly sunny",
+        "weather_night": "Mostly clear"
+    },
+    "5th_day": {
+        "day": "Saturday",
+        "date": "03-01",
+        "minimum_temp": "16\u00b0C",
+        "maximum_temp": "30\u00b0C",
+        "weather_day": "Hazy sunshine",
+        "weather_night": "Clear"
+    }
+}

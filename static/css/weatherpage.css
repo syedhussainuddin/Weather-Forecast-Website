@@ -1,0 +1,318 @@
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.search-bar-container {
+  margin: 0 516px 56px 258px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.search-bar-container img {
+  position: absolute;
+  right: 20px;
+  top: 15%;
+  height: 33px;
+  width: 33px;
+}
+
+.search-bar-container input {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: rgba(177, 177, 177, 0.28) solid 0.5px;
+  width: 100%;
+  outline: none;
+
+  font-size: 18px;
+
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  background-image: linear-gradient(230deg, rgba(255, 255, 255, 0.301), rgba(255, 255, 255, 0) 95%);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1700px) {
+  .search-bar-container {
+    margin: 0 258px 56px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .search-bar-container {
+    flex: 1;
+    margin: 0 158px 56px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+/* MAIN */
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1039px 369px;
+  grid-template-rows: 369px 369px;
+  grid-template-areas:
+    " temp     activity "
+    " forecast forecast "
+  ;
+  gap: 48px;
+  justify-content: center;
+}
+
+
+/* TEMPRATURE CARD */
+
+.current-temp-container {
+  background: rgb(25, 25, 25);
+  background: linear-gradient(-124deg, rgba(25, 25, 25, 1) 14%, rgba(42, 42, 42, 1) 49%, rgba(49, 49, 49, 1) 71%, rgba(25, 25, 25, 1) 100%);
+
+  grid-area: temp;
+  display: flex;
+
+  gap: 64px;
+
+  border: 1px solid rgba(177, 177, 177, 0.096);
+  border-radius: 32px;
+
+  padding: 46px 64px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location {
+  font-size: 32px;
+  letter-spacing: -2%;
+  font-weight: 400;
+  line-height: 135%;
+}
+
+.temprature {
+  line-height: 80%;
+  font-size: 96px;
+  font-weight: bold;
+}
+
+.weather-status {
+  font-size: 32px;
+  font-weight: 200;
+}
+
+.highlow-temprature {
+  font-size: 26px;
+  font-weight: 100;
+  color: rgb(216, 216, 216);
+}
+
+
+/* ACTIVITY CARD */
+
+.activity-image {
+  width: 40%; /* Ensures the image container takes up the full width of its parent */
+  height: 40px; /* Set a fixed height for consistency across all images */
+  overflow: hidden; /* Ensures the image is clipped if it overflows */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+
+.activity-image img {
+  width: auto; /* Keep the aspect ratio */
+  height: 100%; /* Make sure the image fills the container height */
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+
+.suggested-activities-container {
+  background: rgb(25, 25, 25);
+  background: linear-gradient(45deg, rgba(25, 25, 25, 0) 24%, rgba(102, 102, 102, 0.541) 100%);
+
+  grid-area: activity;
+
+  border: 1px solid rgba(177, 177, 177, 0.096);
+  border-radius: 32px;
+
+  padding: 46px 46px;
+}
+
+.suggested-activities-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.activity-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+}
+
+.activity-text h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.activity-text p {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Montserrat", serif;
+  color: rgba(161, 161, 161, 1);
+}
+
+
+/* FORECAST CARD */
+
+.days-forecast-container {
+  background: rgb(25, 25, 25);
+  background: linear-gradient(45deg, rgba(25, 25, 25, 1) 14%, rgba(42, 42, 42, 1) 49%, rgba(49, 49, 49, 1) 71%, rgba(25, 25, 25, 1) 100%);
+
+  grid-area: forecast;
+
+  border: 1px solid rgba(177, 177, 177, 0.096);
+  border-radius: 32px;
+
+  padding: 46px 64px;
+}
+
+.days-forecast-container h1 {
+  font-size: 32px;
+  letter-spacing: -2%;
+  font-weight: bold;
+  margin: 0 0 26px 0;
+
+}
+
+.forecast-card-list {
+  display: flex;
+  overflow-x: scroll;
+  gap: 16px;
+}
+
+.forecast-card-list::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: transparent;
+
+}
+
+.forecast-card-list::-webkit-scrollbar {
+  height: 6px;
+
+}
+
+.forecast-card-list::-webkit-scrollbar-thumb {
+  background-color: rgb(15, 15, 15);
+  border-radius: 12px;
+  width: 20px;
+}
+
+
+.forecast-card-container {
+  background-color: rgba(33, 33, 33, 1);
+
+  display: flex;
+  align-items: center;
+
+  width: 376px;
+  height: 183px;
+
+  border-radius: 24px;
+
+  padding: 17px 27px;
+  gap: 16px;
+}
+
+.today-forecast-card-container {
+  background-color: rgba(33, 33, 33, 1);
+
+  display: flex;
+  align-items: center;
+
+  width: 376px;
+  height: 183px;
+
+  border-radius: 24px;
+  border: 1px white solid;
+
+  padding: 17px 27px;
+  gap: 16px;
+}
+
+.today-forecast-card-container img {
+  height: 106px;
+  width: 106px;
+}
+
+.forecast-card-container img {
+  height: 106px;
+  width: 106px;
+}
+
+.forecast-card-heading {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 8px;
+}
+
+.forecast-card-heading p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+.day-temp {
+  font-size: 34px;
+  color: rgba(242, 242, 242, 1);
+  font-weight: 300;
+}
+
+.day-temp-span {
+  font-size: 14px;
+  color: rgba(141, 141, 141, 1);
+}
+
+.night-temp {
+  font-size: 28px;
+  color: rgba(171, 171, 171, 1);
+  font-weight: 200;
+}
+
+.night-temp-span {
+  font-size: 14px;
+  color: rgba(141, 141, 141, 1);
+}
+
+.date {
+  display: inline-block; 
+  white-space: nowrap;   
+  font-size: 16px;       
+  text-align: center;
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Albert Sans-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!--Nunito Sans-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+  <!--Montserrat-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/weatherpage.css') }}">
+
+  <title>Weather</title>
+</head>
+
+<body>
+  <header>
+    <a href="{{ url_for('landingpage') }}" class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+    </a>
+
+    <div class="search-bar-container">
+      <input type="text" placeholder="Search">
+      <a href="{{ url_for('weatherpage') }}">
+        <img src="{{ url_for('static', filename='images/search-icon.png') }}" alt="search">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-grid">
+      <section class="current-temp-container">
+
+        <img src="{{ url_for('static', filename='images/sun.png') }}">
+
+        <div class="weather-info">
+          <!-- add backend of location name -->
+          <p class="location" id="location"></p>
+          <p class="temprature" id="current-temp"></p>
+          <p class="weather-status" id="current-weather"></p>
+          <p class="highlow-temprature">H : <span class="highlow-temprature" id="currentday-high"></span></p>
+          <p class="highlow-temprature">L : <span class="highlow-temprature" id="currentday-low"></span></p>
+        </div>
+      </section>
+
+      <section class="suggested-activities-container">
+        <h1>Suggested Activities</h1>
+
+        <div class="activity-list">
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="{{url_for ('static', filename='images/' + link1)}}">
+            </div>
+            <div class="activity-text">
+              <h2>{{ activity1 }}</h2>
+              <p>{{ description1 }}</p>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="{{url_for ('static', filename='images/' + link2)}}">
+            </div>
+            <div class="activity-text">
+              <h2>{{ activity2 }}</h2>
+              <p>{{ description2 }}</p>
+            </div>
+          </div>
+
+          <div class="activity-card">
+            <div class="activity-image">
+              <img src="{{url_for ('static', filename='images/' + link3)}}">
+            </div>
+            <div class="activity-text">
+              <h2>{{ activity3}}</h2>
+              <p>{{ description3 }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="days-forecast-container">
+        <h1>5 - Day Forecast</h1>
+
+        <div class="forecast-card-list">
+
+          <div class="today-forecast-card-container">
+            <div>
+              <div class="forecast-card-heading">
+                <p class="day" id="currentday-day">Today</p>
+                <p class="date" id="currentday-date"></p>
+              </div>
+              <p class="day-temp-span"><span class="day-temp" id="currentday-high2"></span>/Day</p>
+              <p class="night-temp-span"><span class="night-temp" id="currentday-low2"></span>/Night</p>
+            </div>
+            <div>
+              <img src="{{url_for ('static', filename='images/sun.png')}}">
+            </div>
+          </div>
+
+          <div class="forecast-card-container">
+            <div>
+              <div class="forecast-card-heading">
+                <p class="day" id="secondday-day"></p>
+                <p class="date" id="secondday-date"></p>
+              </div>
+              <p class="day-temp-span"><span class="day-temp" id="secondday-high"></span>/Day</p>
+              <p class="night-temp-span"><span class="night-temp" id="secondday-low"></span>/Night</p>
+            </div>
+            <div>
+              <img src="{{url_for ('static', filename='images/cloudy.svg')}}">
+            </div>
+          </div>
+
+          <div class="forecast-card-container">
+            <div>
+              <div class="forecast-card-heading">
+                <p class="day" id="thirdday-day"></p>
+                <p class="date" id="thirdday-date"></p>
+              </div>
+              <p class="day-temp-span"><span class="day-temp" id="thirdday-high"></span>/Day</p>
+              <p class="night-temp-span"><span class="night-temp" id="thirdday-low"></span>/Night</p>
+            </div>
+            <div>
+              <img src="{{url_for ('static', filename='images/sun.png')}}">
+            </div>
+          </div>
+
+          <div class="forecast-card-container">
+            <div>
+              <div class="forecast-card-heading">
+                <p class="day" id="fourthday-day"></p>
+                <p class="date" id="fourthday-date"></p>
+              </div>
+              <p class="day-temp-span"><span class="day-temp" id="fourthday-high"></span>/Day</p>
+              <p class="night-temp-span"><span class="night-temp" id="fourthday-low"></span>/Night</p>
+            </div>
+            <div>
+              <img src="{{url_for ('static', filename='images/light-rain.svg')}}">
+            </div>
+          </div>
+
+          <div class="forecast-card-container">
+            <div>
+              <div class="forecast-card-heading">
+                <p class="day" id="fifthday-day"></p>
+                <p class="date" id="fifthday-date"></p>
+              </div>
+              <p class="day-temp-span"><span class="day-temp" id="fifthday-high"></span>/Day</p>
+              <p class="night-temp-span"><span class="night-temp" id="fifthday-low"></span>/Night</p>
+            </div>
+            <div>
+              <img src="{{url_for ('static', filename='images/heavy-rain.svg')}}">
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+  </main>
+  <script>
+    fetch('weather_data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Access "temperature_now", "day", and "weather_day" keys inside "1st_day"
+            const temperatureNow = data["1st_day"]["temperature_now"];
+            const weathernow = data["1st_day"]["weather_day"];
+            const currentday_high = data["1st_day"]["maximum_temp"];
+            const currentday_low = data["1st_day"]["minimum_temp"];
+            
+            const firstday_high = data["1st_day"]["maximum_temp"];
+            const firstday_low = data["1st_day"]["minimum_temp"];
+            const firstday_day = data["1st_day"]["day"];
+            const firstday_date = data["1st_day"]["date"];
+
+            const secondday_high = data["2nd_day"]["maximum_temp"];
+            const secondday_low = data["2nd_day"]["minimum_temp"];
+            const secondday_day = data["2nd_day"]["day"];
+            const secondday_date = data["2nd_day"]["date"];
+
+            const thirdday_high = data["3rd_day"]["maximum_temp"];
+            const thirdday_low = data["3rd_day"]["minimum_temp"];
+            const thirdday_day = data["3rd_day"]["day"];
+            const thirdday_date = data["3rd_day"]["date"];
+
+            const fourthday_high = data["4th_day"]["maximum_temp"];
+            const fourthday_low = data["4th_day"]["minimum_temp"];
+            const fourthday_day = data["4th_day"]["day"];
+            const fourthday_date = data["4th_day"]["date"];
+
+            const fifthday_high = data["5th_day"]["maximum_temp"];
+            const fifthday_low = data["5th_day"]["minimum_temp"];
+            const fifthday_day = data["5th_day"]["day"];
+            const fifthday_date = data["5th_day"]["date"];
+            
+            // Update the respective <p> tags with the fetched values
+            document.getElementById('current-temp').textContent = temperatureNow;
+            document.getElementById('current-weather').textContent = weathernow;
+            document.getElementById('currentday-high').textContent = currentday_high;
+            document.getElementById('currentday-low').textContent = currentday_low;
+            
+            document.getElementById('currentday-high2').textContent = firstday_high;
+            document.getElementById('currentday-low2').textContent = firstday_low;
+            document.getElementById('currentday-day').textContent = firstday_day;
+            document.getElementById('currentday-date').textContent = firstday_date;
+            
+            document.getElementById('secondday-high').textContent = secondday_high;
+            document.getElementById('secondday-low').textContent = secondday_low;
+            document.getElementById('secondday-day').textContent = secondday_day;
+            document.getElementById('secondday-date').textContent = secondday_date;
+
+            document.getElementById('thirdday-high').textContent = thirdday_high;
+            document.getElementById('thirdday-low').textContent = thirdday_low;
+            document.getElementById('thirdday-day').textContent = thirdday_day;
+            document.getElementById('thirdday-date').textContent = thirdday_date;
+
+            document.getElementById('fourthday-high').textContent = fourthday_high;
+            document.getElementById('fourthday-low').textContent = fourthday_low;
+            document.getElementById('fourthday-day').textContent = fourthday_day;
+            document.getElementById('fourthday-date').textContent = fourthday_date;
+
+            document.getElementById('fifthday-high').textContent = fifthday_high;
+            document.getElementById('fifthday-low').textContent = fifthday_low;
+            document.getElementById('fifthday-day').textContent = fifthday_day;
+            document.getElementById('fifthday-date').textContent = fifthday_date;
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
+        const urlParams = new URLSearchParams(window.location.search);
+        const cityParam = urlParams.get('city');
+        const countryParam = urlParams.get('country');
+
+        document.getElementById('location').textContent = `${cityParam}, ${countryParam}`;
+        // document.getElementById('details').textContent = `Country: ${countryParam}`;
+
+
+</script>
+</body>
+
+</html>

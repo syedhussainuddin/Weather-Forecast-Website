@@ -1,0 +1,27 @@
+body {
+  background-color: rgba(25, 25, 25, 1);
+
+  color: white;
+  font-family: "Nunito Sans", serif;
+  font-size: 100%;
+
+  padding: 24px 64px 0;
+
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-family: "Albert Sans", serif;
+}
+
+a {
+  height: 30px;
+}

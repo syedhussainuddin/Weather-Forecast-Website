@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landingpage.css') }}">
+
+  <title>Forecastly</title>
+</head>
+
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+  </header>
+
+  <div class="content-container">
+    <!-- <div class="overlay">
+      <div class="popup">
+        <div class="close-popup-bg">
+          <div class="close-popup">X</div>
+        </div>
+        <p>Please fill in all fields!!!</p>
+      </div>
+    </div> -->
+    <section class="left-section">
+      <h1>Forecastly</h1>
+
+      <p>Discover the forecast for your city or country in seconds.</p>
+
+      <div class="search-bar">
+        <form action="{{ url_for('weatherpage') }}" method="GET">
+          <div>
+            <input type="text" name="city" placeholder="Enter City" required>
+            <input type="text" name="country" placeholder="Enter Country" required>
+          </div>
+          <div class="search-button">
+            <button type="submit">Search
+              <!--<img src="{{ url_for('static', filename='images/search-icon.png') }}" alt="search">-->
+            </button>
+          </div>
+        </form>        
+      </div>      
+    </section>
+
+    <section class="right-section">
+      <img class="sunlight" src="{{ url_for('static', filename='images/behind-sun.png') }}">
+      <img class="main-image" src="{{ url_for('static', filename='images/landing-graphic.png') }}">
+      <img class="star1" src="{{ url_for('static', filename='images/star1.png') }}">
+      <img class="star2" src="{{ url_for('static', filename='images/star2.png') }}">
+      <img class="star3" src="{{ url_for('static', filename='images/star3.png') }}">
+      <img class="star4" src="{{ url_for('static', filename='images/star4.png') }}">
+      <img class="star5" src="{{ url_for('static', filename='images/star5.png') }}">
+    </section>
+  </div>
+
+</body>
+</html>
